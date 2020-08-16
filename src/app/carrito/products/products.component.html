@@ -1,0 +1,41 @@
+<div class="fadeIn slow catalogo bg-white top-30 mt-2">
+    <div class="d-flex flex-column flex-md-row justify-content-between">
+        <h1>Catálogo de productos</h1>
+        <form class="form-inline my-2 my-lg-0">
+            <!--hacer buscador  El catálogo de productos debe contar con un buscador en el que se filtren los productos mostrados por nombre,
+                 a medida que se introduzcan caracteres en el buscador. Sólo los productos que contengan el texto de búsqueda pueden aparecer
+                  en el catálogo.-->
+
+            <!--     <input (keyup)="searchProduct(search.value)" class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search" #search>  -->
+            <input type="text" class="form-control" name="filterPost" placeholder="Search..." [(ngModel)]="filterPost">
+
+        </form>
+    </div>
+    <div *ngIf="products">
+        <div *ngIf="products == 0" class="top-50">
+            <div class="alert alert-info">No se encontraron coincidencias para: {{ products.Nombre }}</div>
+        </div>
+        <div class=" top-40  mb-3 victor ">
+
+
+            <div *ngFor="let p of products | filter:filterPost  " class="fadeIn fast card  orden ml-3">
+                <div class="text-center  "> <img class=" card-img-top  " src={{p.foto}} alt={{p.Nombre}}> </div>
+                <div class="card-body  ">
+                    <h3 class="card-title ">{{p.Nombre }}</h3>
+                    <h5 class="card-text ">Precio: <small>{{ p.Precio | currency:'USD':true:'1.0-0'}} COP</small></h5>
+                    <h5 class="card-text ">Disponible: <small id="unidades">{{ p.Unidadesdisponibles}}</small></h5>
+                    <div class="d-flex justify-content-end top-20 mt-2  ">
+                        <input [routerLink]="['/producto', p.id]" class="btn btn-sm btn-outline-info pointer mr-5 " type="button" value="Detalles">
+                        <input class="pointer btn btn-sm btn-outline-success left-5 mr-5 " type="button" value="Añadir" (click)="NotificacionCarrito(input.value,p.id)">
+                        <input value="1" class="w-60 form-control  ml-3 mr-2" min="1 " type="number" step="1" min="1" pattern="^[1-9]+" #input>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>

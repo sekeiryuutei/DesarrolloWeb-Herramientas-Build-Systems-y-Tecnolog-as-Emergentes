@@ -1,0 +1,11 @@
+.main-container {
+    background-image: url("../../../assets/img/fondos/main-fondo.jpg");
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+}

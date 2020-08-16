@@ -1,0 +1,24 @@
+<div class="contenedor">
+    <app-navbar></app-navbar>
+
+    <div class="margin">
+        <div class="card bg-dark text-white mt-5 border-light mb-3 " *ngIf="user$ |async as user; else loading">
+            <div class="cad-body">
+                <h3 class="card-title text-center">Gracias por registrate!</h3>
+                <div class="form-group mt-2">
+                    <p class="text-center">
+                        Hemos enviado un correo electrónico de confirmación a <strong>{{user?.email}}</strong>
+                    </p>
+                    <p class="text-center">
+                        Por favor revisa tu email y haz click en el linck de verificacion en tu correo electronico.
+                    </p>
+                </div>
+                <div class="form-group text-center mt-4">
+                    <button class="btn btn-dark  btn-block" (click)="onSendEmail()"> Re-enviar email de verificacion</button>
+                </div>
+            </div>
+        </div>
+
+        <ng-template #loading>Loading...</ng-template>
+    </div>
+</div>

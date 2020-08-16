@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" routerLink="/home">Tienda</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink='/Home'>La bodega <span class="sr-only ">(current)</span></a>
+            </li>
+        </ul>
+
+
+        <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mt-2 mt-lg-0">
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link"><i class="fa fa-th" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/CarritoCompras']"><i class="fa fa-cart-arrow-down fa-th" aria-hidden="true">{{countProduct}}</i></a>
+
+                    <!--  <a class="nav-link" [routerLink]="['/carrito']"><i class="fa fa-shopping-cart" aria-hidden="true"></i><i *ngIf="_carritoService.getCarrito().length > 0" class="fs-8 c-red fa fa-circle" aria-hidden="true"></i></a>-->
+                </li>
+            </ul>
+        </div>
+
+        <ul class="navbar-nav  ml-auto" *ngIf="user$ | async as user; else login">
+
+            <li class="nav-item">
+                <a class="nav-link"> {{user?.email}}</a>
+            </li>
+            <li class="nav-item  " *ngIf="user">
+                <a href="#" class="nav-link " (click)="onLogut()"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i> </a>
+            </li>
+        </ul>
+        <ng-template #login>
+            <ul class="navbar-nav mr-auto  mx-auto">
+                <li class="nav-item  " *ngIf="!user">
+                    <a class="nav-link " routerLink='/login'>Login </a>
+                </li>
+                <li class="nav-item  ">
+                    <a class="nav-link " routerLink='/register'>Registrer </a>
+                </li>
+            </ul>
+        </ng-template>
+    </div>
+</nav>

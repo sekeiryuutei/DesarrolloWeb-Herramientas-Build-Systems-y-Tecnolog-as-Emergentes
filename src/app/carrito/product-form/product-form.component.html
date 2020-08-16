@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="main-container p-bott-50">
+    <div class="container ">
+
+
+
+
+        <div class="fadeIn slow catalogo bg-white top-30 mt-2 mb-5">
+            <div class="d-flex flex-column">
+                <h1> Producto: {{this.objetoDelArreglo[0].Nombre}}</h1>
+                <div class="row no-gutters mt-2 mb-2">
+                    <div class="col-md-4  ">
+                        <img src="{{this.image}}" class=" mt-5 ml-4 mr-2 mb-2 " alt="{{this.nombre}}"> </div>
+                    <div class="col-md-8">
+                        <div class="card-body ml-5 mt-4">
+                            <h3 class="card-title">Detalles</h3>
+                            <h5 class="card-text ">Precio: <small>{{ this.objetoDelArreglo[0].Precio | currency:'USD':true:'1.0-0'}} COP</small></h5>
+                            <p class="card-text"><small class="text-muted">Unidades disponibles: {{this.objetoDelArreglo[0].Unidadesdisponibles }}  </small></p>
+                        </div>
+                    </div>
+                </div>
+                <button [routerLink]="['/home']" type="button" class="btn btn-outline-info ">Regresar</button>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+</div>

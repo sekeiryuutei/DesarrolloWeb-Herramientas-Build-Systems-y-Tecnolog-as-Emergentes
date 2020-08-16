@@ -1,0 +1,27 @@
+<div class="login-container ">
+    <div class="row">
+        <div class=" col-md-6 mx-auto mt-5">
+            <div class="text-center   text-white">
+                <div class="text-center   text-white">
+                    <h2>Iniciar Sesion!</h2>
+                </div>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label class="text-white" for="email">Correo electrónico:</label>
+                    <input type="email" class="form-control form-control-md  text-white" required formControlName="email" placeholder="mail@dragon.com" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$" id="pnombre">
+                </div>
+                <div class="form-group">
+                    <label class="text-white" for="password">Password</label>
+                    <input class="text-white form-control" type="password" required formControlName="password" placeholder="****" id="pnombre">
+                </div>
+                <button class="text-white" type="submit" class="btn btn-dark btn-lg btn-block" id="boton"> Login</button>
+            </form>
+            <div class="form-group mt-3">
+                <p class="text-white">Unete! <a [routerLink]="['/register']"> Register</a></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>

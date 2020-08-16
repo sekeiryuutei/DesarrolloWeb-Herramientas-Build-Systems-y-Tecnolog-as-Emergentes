@@ -1,0 +1,15 @@
+.contenedor {
+    background-color: #222222;
+    background-image: url("../../../assets/img/fondos/registro.jpg");
+    background-size: cover;
+    background-position: right;
+    width: 100vw;
+    height: 100vh;
+}
+
+.margin {
+    margin-top: 30vh;
+}
+
+
+/**si algo borra todo menos los tamaños y el color we**/

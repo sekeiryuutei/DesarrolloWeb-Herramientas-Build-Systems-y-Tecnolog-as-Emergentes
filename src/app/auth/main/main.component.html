@@ -1,0 +1,13 @@
+<!--<app-navbar></app-navbar>
+<div class="main-container p-bott-50">
+    <div class="container">
+        <app-products></app-products>
+    </div>
+</div>-->
+
+<app-navbar #navBar></app-navbar>
+<div class="main-container p-bott-50">
+    <div class="container">
+        <app-products (eventEmitNavBar)="funEventEmitNavBar($event)"></app-products>
+    </div>
+</div>

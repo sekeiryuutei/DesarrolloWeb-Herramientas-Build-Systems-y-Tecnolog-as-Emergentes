@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tienda-70cff": {
+      "hosting": {
+        "tienda": [
+          "tienda-70cff"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tienda-70cff"
+  }
+}

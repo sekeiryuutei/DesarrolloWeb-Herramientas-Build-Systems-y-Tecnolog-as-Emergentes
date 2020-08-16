@@ -1,0 +1,75 @@
+<div class="main-container p-bott-50">
+
+    <app-navbar></app-navbar>
+
+    <div class="container  ">
+
+
+
+
+        <div class="fadeIn slow catalogo bg-white top-30 mt-5   ">
+
+            <!--  <div *ngIf="">
+                <div *ngIf="this.ProductosCarrito.Carrito == 0" class="top-50">
+                    <div class="alert alert-danger">No se encontraron coincidencias para: {{ products.Nombre }}</div>
+                </div>-->
+            <div class="d-flex flex-column  ">
+
+                <h1> Carrito Compras! </h1>
+
+                <div class="row no-gutters mt-2 mb-2 ">
+                    <!-- este es quien los contiene flex-->
+
+                    <div class="col-md-4 imagenes4 ">
+
+                        <div>
+
+                            <div *ngFor="let p of products" class="row  orden ">
+                                <div class="contienedatos ">
+                                    <img src="{{p.foto}}" class="" alt="{{p.Nombre}}">
+                                    <div class="FormatoProductos">
+                                        <h5>{{p.Nombre}}</h5>
+                                        <h6>Unidades: {{p.CantidadAcumulada}}</h6>
+                                        <h6>Subtotal: ({{p.CantidadAcumulada * p.Unidadesdisponibles}})</h6>
+
+
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-8  ">
+                        <div class="card-body ml-5 mt-4 ">
+                            <h3 class="card-title">Total: {{total}}</h3>
+                            <!-- <h5 class="card-text ">Precio: <small>{{ this.objetoDelArreglo[0].Precio | currency:'USD':true:'1.0-0'}} COP</small></h5>
+                            <p class="card-text"><small class="text-muted">Unidades disponibles: {{this.objetoDelArreglo[0].Unidades }}  </small></p>-->
+                            <button [routerLink]="['/home']" type="button" class="btn btn-outline-info ">Cancelar</button>
+                            <button type="button" class="btn btn-success" (onClick)="updateProduct()">Pagar</button>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+    <div *ngIf="products">
+        <div *ngIf="products == 0" class="top-50">
+            <div class="alert alert-danger">No se encontraron coincidencias para: {{ products.Nombre }}</div>
+        </div>
+    </div>

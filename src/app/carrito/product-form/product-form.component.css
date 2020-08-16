@@ -1,0 +1,39 @@
+.catalogo {
+    width: 100%;
+}
+
+img {
+    width: 110%;
+    height: 350px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.victor {
+    height: 82vh;
+    width: 100%;
+    overflow-y: scroll;
+    flex-flow: column;
+    display: flex;
+    flex-flow: wrap;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.orden {
+    width: 33%;
+    margin: 1.7px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.main-container {
+    background-image: url("../../../assets/img/fondos/main-fondo.jpg");
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+}
